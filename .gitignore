@@ -29,3 +29,6 @@ Makefile.in
 *.exe
 *.out
 *.app
+
+# Temporary large array of numbers for test
+A
