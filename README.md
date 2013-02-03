@@ -37,3 +37,6 @@ min1.c
 
 insertion_sort.c
 merge_sort.c
+
+heap.c
+heapsort.c

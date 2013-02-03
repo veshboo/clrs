@@ -1,7 +1,7 @@
 .PHONY: all clean
 
 sources = genrand.c min0.c min1.c \
-	insertion_sort.c merge_sort.c
+	insertion_sort.c merge_sort.c heapsort.c
 objects = $(sources:.c=.o)
 targets = $(objects:.o=)
 
@@ -15,5 +15,6 @@ min0: min0.o util.o
 min1: min1.o util.o
 insertion_sort: insertion_sort.o util.o
 merge_sort: merge_sort.o util.o
+heapsort: heapsort.o heap.o util.o
 
 # vim: set noet :
