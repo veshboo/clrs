@@ -40,3 +40,9 @@ merge_sort.c
 
 heap.c
 heapsort.c
+
+quick_sort.cc
+
+rbtree.cc
+
+knapsack_01.cc
