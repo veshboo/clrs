@@ -1,16 +1,25 @@
 .PHONY: all clean
 
+# build java programs also in this Makefile
+# because this project is just practice
+.SUFFIXES: .java .class
+.java.class:
+	javac $<
+
 targets = genrand min0 min1 \
 	insertion_sort merge_sort heapsort \
 	quick_sort rbtree knapsack_01
 
+jtargets = RelabelToFront.class
+
 CFLAGS = -Wno-implicit-function-declaration
 CFLAGS += -Wno-main-return-type
 
-all: $(targets)
+all: $(targets) $(jtargets)
 clean:
-	rm util.o heap.o
-	rm $(targets)
+	rm -f util.o heap.o
+	rm -f $(targets)
+	rm -f *.class
 
 genrand: genrand.c
 min0: min0.c util.o
