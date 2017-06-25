@@ -91,8 +91,8 @@ public class RelabelToFront {
         // just checking Adj[u] is not enough,
         // checking all v in V is too much enough,
         // checking only u's neighbors is necessary enough.
-        // (A small optimization for the CLRS's RELABEL procedure
-        // which is for GENERIC PUSH-RELABEL algorithm)
+        // (A better iterpretation for the CLRS's RELABEL procedure
+        // which is for GENERIC PUSH-RELABEL algorithms)
         for (Vert v : u.N) {
             // u.N does not include u itself.
             // Even if it does, when v is u, cf(u, v) == cf(v, v) == 0,
