@@ -88,9 +88,14 @@ public class RelabelToFront {
 
     void relabel(Vert u) {
         int minH = Integer.MAX_VALUE;
-        // just checking Adj[u] is not enough, must check all v in V
-        for (Vert v : V.values()) {
-            // when v is u, cf(u, v) == cf(v, v) == 0,
+        // just checking Adj[u] is not enough,
+        // checking all v in V is too much enough,
+        // checking only u's neighbors is necessary enough.
+        // (A small optimization for the CLRS's RELABEL procedure
+        // which is for GENERIC PUSH-RELABEL algorithm)
+        for (Vert v : u.N) {
+            // u.N does not include u itself.
+            // Even if it does, when v is u, cf(u, v) == cf(v, v) == 0,
             // thus it will be skipped safely.
             // (or height will always increase by 1, tediously)
             if (cf(u, v) > 0) {
